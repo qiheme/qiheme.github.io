@@ -725,7 +725,7 @@ describe('issueDrafts: every finding becomes a tracked issue', () => {
     const [first] = drafts().findings
     assert.equal(
       first.title,
-      '[Task]: Handbook audit: npm, with a committed package-lock.json (lockfile)',
+      '[Infra] Handbook audit: npm, with a committed package-lock.json (lockfile)',
     )
     assert.equal(drafts().findings[0].title, first.title)
   })
@@ -754,7 +754,7 @@ describe('issueDrafts: every finding becomes a tracked issue', () => {
     const { parent } = drafts()
     assert.equal(
       parent.title,
-      '[Task]: Handbook audit: bring my-app up to the Engineering Handbook standard',
+      'Handbook audit: bring my-app up to the Engineering Handbook standard',
     )
     for (const heading of ['### What', '### Why now', '### Done when', '### Effort estimate']) {
       assert.ok(parent.body.includes(heading), heading)

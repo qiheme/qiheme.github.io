@@ -19,11 +19,32 @@ flowchart LR
 ## 1. Every piece of work starts with an issue
 
 - No issue, no code. If none exists, open one first. The issue is the description of the work.
-- Use the form: **Feature** (users can see it), **Bug** (something is broken), **Task** (refactor, tooling, tests, infrastructure). Set the Issue Type.
+- Use the form: **Feature** (users can see it), **Bug** (something is broken), **Task** (refactor, tooling, tests, infrastructure). Set the Issue Type. A larger effort is an **Epic** with sub-issues.
+- **The title starts with the kind of work**, in brackets, from the list below: `[UI] Flight detail`. Do not write the issue type in the title. An epic has a plain name and no bracket. Decided by the owner ([D28](../decisions.md)).
 - Attach it to its parent issue as a sub-issue when there is one.
 - **Audit findings are issues.** When an audit of a repo finds a required rule not met, each finding is logged as a Task issue in that repo, as a sub-issue of one tracking issue. The audit skill does this itself. See [Agents](agents.md#auditing-a-repo).
 - **An epic that changes data, server code, hosting, an outside service or a dependency starts with its architecture.** The target page and its decision records come before the first story. Proposed: see [Architecture](architecture.md).
 - **Out-of-scope discoveries are filed, not fixed.** If you find something that should change but is not this task, open an issue and carry on. Reference it in a code comment if it matters right there: `// TODO: see #42`.
+
+### Kinds of work
+
+The type says what an issue is: a Feature, a Bug, a Task. The badge beside the title already shows it. The bracket says what kind of work it takes, which the type cannot. Under an epic, that is the difference between a list of thirty "Feature" rows and a list you can scan for the migrations.
+
+| Prefix | The work is | Example |
+| --- | --- | --- |
+| `[UI]` | A screen or a component | `[UI] Flight detail` |
+| `[Data]` | A table, a migration, a schema, the data layer | `[Data] Expenses and settlements` |
+| `[Logic]` | A pure module with no screen | `[Logic] Ledger maths` |
+| `[API]` | Server-side code: a function, a webhook, a scheduled job | `[API] Inbox ingest as an Edge Function` |
+| `[Infra]` | The pipeline, the host, tooling, repo set-up | `[Infra] Leave Vercel` |
+| `[QA]` | A test pass: accessibility, end-to-end, visual | `[QA] Accessibility pass` |
+| `[Content]` | Copy or rules checked against a source | `[Content] Verify every rule line` |
+| `[Docs]` | Documents only | `[Docs] README and CLAUDE.md updates` |
+| `[DS]` | The design system, or adopting a release of it | `[DS] Add the warm tokens` |
+
+- **One prefix per issue.** If a story needs two, name it for the part a user or reviewer would look at first. A story that adds a table and its screen is `[UI]`; the table is in its Architecture section.
+- **The list is fixed.** A new kind is a change to this page, so the prefixes stay comparable across repos and on one project board.
+- An item parked for later has no bracket until it is scheduled.
 
 ## 2. Branch from the issue
 

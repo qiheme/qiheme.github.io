@@ -106,9 +106,9 @@ Work here starts with an issue, so a finding that is not an issue does not exist
 node "${CLAUDE_SKILL_DIR}/scripts/audit.mjs" . --issues
 ```
 
-It prints JSON: a `parent` issue and one entry in `findings` for each `FAIL`. Each is in the Task form (What, Why now, Done when, Parent issue, Effort estimate). Titles start `[Task]: Handbook audit:` and a finding's title ends with its rule id in brackets, which is how a later audit finds it again. If there is no `FAIL`, there is nothing to file: say so.
+It prints JSON: a `parent` issue and one entry in `findings` for each `FAIL`. Each is in the Task form (What, Why now, Done when, Parent issue, Effort estimate). A finding's title starts `[Infra] Handbook audit:`, the parent's starts `Handbook audit:`, and a finding's title ends with its rule id in brackets, which is how a later audit finds it again. If there is no `FAIL`, there is nothing to file: say so.
 
-**Look before you file.** List this repository's issues, open and closed, whose title starts with `[Task]: Handbook audit:`. Also search for an existing issue that already covers a finding under another title (search the rule's key words). Never file a duplicate.
+**Look before you file.** List this repository's issues, open and closed, whose title contains `Handbook audit:`. That also finds issues filed before titles changed, which start `[Task]: Handbook audit:`. Also search for an existing issue that already covers a finding under another title (search the rule's key words). Never file a duplicate.
 
 Then, for the parent and each finding:
 

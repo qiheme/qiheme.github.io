@@ -859,7 +859,7 @@ export function issueDrafts(result, { name, today }) {
     return {
       rule: check.id,
       size,
-      title: `[Task]: Handbook audit: ${check.title} (${check.id})`,
+      title: `[Infra] Handbook audit: ${check.title} (${check.id})`,
       body: [
         '### What',
         '',
@@ -892,7 +892,7 @@ export function issueDrafts(result, { name, today }) {
   })
 
   const parent = {
-    title: `[Task]: Handbook audit: bring ${name} up to the Engineering Handbook standard`,
+    title: `Handbook audit: bring ${name} up to the Engineering Handbook standard`,
     body: [
       '### What',
       '',

@@ -1,11 +1,14 @@
 name: Feature
 description: A new user-visible capability
-title: "[Feature]: "
+title: "[<KIND>] "
 type: Feature
 body:
   - type: markdown
     attributes:
       value: |
+        The title starts with the kind of work in brackets, then a plain name: `[UI] Flight detail`.
+        Kinds: `[UI]` `[Data]` `[Logic]` `[API]` `[Infra]` `[QA]` `[Content]` `[Docs]` `[DS]`. The issue type is set for you; do not write it in the title.
+
         Use this for new capabilities visible to end users.
         For refactors, infrastructure or test work use **Task**. For a bug use **Bug**.
 

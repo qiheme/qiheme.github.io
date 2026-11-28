@@ -1,11 +1,14 @@
 name: Bug
 description: Something in the handbook is wrong, out of date or broken
-title: "[Bug]: "
+title: "[<KIND>] "
 type: Bug
 body:
   - type: markdown
     attributes:
       value: |
+        The title starts with the kind of work in brackets, then a plain name: `[UI] Flight detail`.
+        Kinds: `[UI]` `[Data]` `[Logic]` `[API]` `[Infra]` `[QA]` `[Content]` `[Docs]` `[DS]`. The issue type is set for you; do not write it in the title.
+
         Use this when something doesn't work as intended.
         For desired-but-missing behaviour use **Feature**.
 

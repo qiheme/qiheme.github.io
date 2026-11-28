@@ -1,11 +1,14 @@
 name: Task
 description: Implementation work, refactor or infrastructure (not directly user-visible)
-title: "[Task]: "
+title: "[<KIND>] "
 type: Task
 body:
   - type: markdown
     attributes:
       value: |
+        The title starts with the kind of work in brackets, then a plain name: `[UI] Flight detail`.
+        Kinds: `[UI]` `[Data]` `[Logic]` `[API]` `[Infra]` `[QA]` `[Content]` `[Docs]` `[DS]`. The issue type is set for you; do not write it in the title.
+
         Use this for refactors, dependency bumps, infrastructure, tooling or test work: "no visible change, but the code is healthier".
         For user-visible work use **Feature**.
 
